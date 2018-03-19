@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的博客</title>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <header>
+        <ul class="headerList">
+            <li>照相机</li>
+            <li class="h-middle">
+                <a href="">关注</a>
+                <a href="">热门</a>
+            </li>
+            <li>扫一扫</li>
+        </ul>
+    </header>
+    <section class="null"></section>
+    <section class="nav">
+        <ul class="navList">
+            <li>首页</li>
+            <li>图片</li>
+            <li>时事</li>
+            <li>文化</li>
+            <li>时尚</li>
+            <li>娱乐</li>
+            <li>生活</li>
+            <li>健康</li>
+            <li>旅游</li>
+            <li>艺术</li>
+        </ul>
+    </section>
+    <section class="banner">
+        <ul class="b-imgs">
+            <li><img src="img/i1.jpg" alt=""></li>
+            <li><img src="img/i2.jpg" alt=""></li>
+            <li><img src="img/i3.jpg" alt=""></li>
+        </ul>
+    </section>
+    <section class="container">
+        <ul class="content">
+            <li>
+                <p>你是我的小苹果 怎么爱你都不嫌多 红红的小脸温暖我的心窝 点亮我生命的火火火</p>
+                <img src="img/i1.jpg" alt="">
+            </li>
+            <li>
+                <p>你是我的小苹果 怎么爱你都不嫌多 红红的小脸温暖我的心窝 点亮我生命的火火火</p>
+                <img src="img/i1.jpg" alt="">
+            </li>
+            <li>
+                <p>你是我的小苹果 怎么爱你都不嫌多 红红的小脸温暖我的心窝 点亮我生命的火火火</p>
+                <img src="img/i1.jpg" alt="">
+            </li>
+            <li>
+                <p>你是我的小苹果 怎么爱你都不嫌多 红红的小脸温暖我的心窝 点亮我生命的火火火</p>
+                <img src="img/i1.jpg" alt="">
+            </li>
+            <li>
+                <p>你是我的小苹果 怎么爱你都不嫌多 红红的小脸温暖我的心窝 点亮我生命的火火火</p>
+                <img src="img/i1.jpg" alt="">
+            </li>
+            <li>
+                <p>你是我的小苹果 怎么爱你都不嫌多 红红的小脸温暖我的心窝 点亮我生命的火火火</p>
+                <img src="img/i1.jpg" alt="">
+            </li>
+            <li>
+                <p>你是我的小苹果 怎么爱你都不嫌多 红红的小脸温暖我的心窝 点亮我生命的火火火</p>
+                <img src="img/i1.jpg" alt="">
+            </li>
+            <li>
+                <p>你是我的小苹果 怎么爱你都不嫌多 红红的小脸温暖我的心窝 点亮我生命的火火火</p>
+                <img src="img/i1.jpg" alt="">
+            </li>
+            <li>
+                <p>你是我的小苹果 怎么爱你都不嫌多 红红的小脸温暖我的心窝 点亮我生命的火火火</p>
+                <img src="img/i1.jpg" alt="">
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <ul class="footerList">
+            <li>首页</li>
+            <li>
+                <a href="info.html">消息</a>
+            </li>
+            <li>更多</li>
+            <li>发现</li>
+            <li>
+                <a href="me.html">我</a>
+            </li>
+        </ul>
+    </footer>
+    <section class="footer"></section>
+</body>
+</html>
+<script>
+    let banner = document.querySelector(".banner");
+    let lis = document.querySelectorAll(".b-imgs li");
+    let n = 0;
+    let flag = true;
+    let t = setInterval(move, 2000);
+    function move() {
+        n ++;
+        if(n >= lis.length) {
+            n = 0;
+        }
+        lis.forEach(function (dom, index) {
+            dom.style.opacity = 0;
+        });
+        lis[n].style.opacity = 1;
+        lis[n].addEventListener("transitionend", function () {
+            flag = true;
+        })
+    }
+    banner.ontouchmove = function (e) {
+        clearInterval(t);
+        if(!flag) {
+            return ;
+        }
+        flag = false;
+        move();
+    };
+    banner.ontouchend = function (e) {
+        t = setInterval(move, 2000);
+    }
+
+
+
+    //个人博客
+        //用于学习, 交流 , 记录个人信息  共享信息
+        //有超链接 评论区域  新闻日志  照片 诗歌
+        //页面  主页  资源下载  文章操作  个人信息
+        //功能添加 删除  修改文章  图片 个人信息的管理
+
+    //功能
+        //用户模块
+            //登录模块
+            //注册模块
+            //文章管理模块
+            //评论管理模块
+            //图片管理模块
+        //管理员模块
+            //用户管理模块
+            //文章信息管理模块     标题 作者  id号  文章内容  发表时间
+            //评论管理模块
+            //图片上传模块
+
+</script>
